@@ -30,6 +30,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+    }
+
 }
 
 dependencies {
@@ -42,6 +47,16 @@ dependencies {
     def retroVersion = "2.9.0"
     implementation "com.squareup.retrofit2:retrofit:$retroVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retroVersion"
+
+    //ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+
+    def nav_version = "2.6.0"
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    //coil
+    implementation 'io.coil-kt:coil:2.4.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
