@@ -1,4 +1,4 @@
-package cl.samf.individual5_mod6.data.presentacion
+package cl.samf.individual5_mod6.presentacion
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

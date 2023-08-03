@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listadoFragment"
-        android:name="cl.samf.individual5_mod6.data.presentacion.ListadoFragment"
+        android:name="cl.samf.individual5_mod6.presentacion.ListadoFragment"
         android:label="fragment_listado"
         tools:layout="@layout/fragment_listado" />
 </navigation>
