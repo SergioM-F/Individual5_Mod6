@@ -3,6 +3,7 @@ package cl.samf.individual5_mod6.presentacion
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import cl.samf.individual5_mod6.data.local.TerrenoEntity
 import cl.samf.individual5_mod6.data.remote.Terreno
 import cl.samf.individual5_mod6.databinding.FragmentListadoBinding
 import cl.samf.individual5_mod6.databinding.ItemLayoutTerrenoBinding
@@ -11,7 +12,7 @@ import coil.load
 class AdapterTerreno : RecyclerView.Adapter<AdapterTerreno.ViewHolder>() {
 
     lateinit var binding: ItemLayoutTerrenoBinding
-    private val listItemTerrenos = mutableListOf<Terreno>()
+    private val listItemTerrenos = mutableListOf<TerrenoEntity>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         binding = ItemLayoutTerrenoBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -28,14 +29,14 @@ class AdapterTerreno : RecyclerView.Adapter<AdapterTerreno.ViewHolder>() {
         holder.bind(terreno)
     }
 
-    fun setData(terreno: List<Terreno>){
+    fun setData(terreno: List<TerrenoEntity>){
         this.listItemTerrenos.clear()
         this.listItemTerrenos.addAll(terreno)
         notifyDataSetChanged()
     }
 
     class ViewHolder(val binding: ItemLayoutTerrenoBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(terreno: Terreno){
+        fun bind(terreno: TerrenoEntity){
             binding.imageViewTerreno.load(terreno.imagen)
         }
     }
