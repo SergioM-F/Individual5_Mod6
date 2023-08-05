@@ -1,8 +1,11 @@
 package cl.samf.individual5_mod6.presentacion
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import cl.samf.individual5_mod6.R
 import cl.samf.individual5_mod6.data.local.TerrenoEntity
 import cl.samf.individual5_mod6.data.remote.Terreno
 import cl.samf.individual5_mod6.databinding.FragmentListadoBinding
@@ -38,6 +41,11 @@ class AdapterTerreno : RecyclerView.Adapter<AdapterTerreno.ViewHolder>() {
     class ViewHolder(val binding: ItemLayoutTerrenoBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(terreno: TerrenoEntity){
             binding.imageViewTerreno.load(terreno.imagen)
+            binding.imageViewTerreno.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putString("id",terreno.id)
+                Navigation.findNavController(binding.root).navigate(R.id.action_listadoFragment_to_detalleFragment, bundle)
+            }
         }
     }
 

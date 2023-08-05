@@ -9,5 +9,18 @@
         android:id="@+id/listadoFragment"
         android:name="cl.samf.individual5_mod6.presentacion.ListadoFragment"
         android:label="fragment_listado"
-        tools:layout="@layout/fragment_listado" />
+        tools:layout="@layout/fragment_listado" >
+        <action
+            android:id="@+id/action_listadoFragment_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleFragment"
+        android:name="cl.samf.individual5_mod6.presentacion.DetalleFragment"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" >
+        <action
+            android:id="@+id/action_detalleFragment_to_listadoFragment"
+            app:destination="@id/listadoFragment" />
+    </fragment>
 </navigation>
